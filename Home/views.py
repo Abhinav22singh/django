@@ -6,6 +6,6 @@ def about(request):
 def services(request):
     return HttpResponse("Services Page")
 def contact(request):
-    return HttpResponse("Contact Page")
+    return HttpResponse("this is Contact Page")
 
 # Create your views here.
