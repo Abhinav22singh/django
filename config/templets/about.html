@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">About Us</h1>
+            <p class="text-center text-muted">Get to know who we are and what we do.</p>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Our mission" style="height:200px; object-fit:cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Our Mission</h5>
+                    <p class="card-text">We're dedicated to building thoughtful, reliable solutions that make a real difference for the people who use them.</p>
+                    <div class="mt-auto">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Our team" style="height:200px; object-fit:cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Our Team</h5>
+                    <p class="card-text">A group of passionate people working together, bringing diverse skills and a shared commitment to quality.</p>
+                    <div class="mt-auto">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Our values" style="height:200px; object-fit:cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Our Values</h5>
+                    <p class="card-text">Transparency, quality, and genuine care guide every decision we make and every project we take on.</p>
+                    <div class="mt-auto">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

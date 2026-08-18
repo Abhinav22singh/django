@@ -1,33 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Demo Page</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 600px;
-      margin: 60px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    h1 { color: #2c3e50; }
-    p { color: #555; }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      background: #3498db;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover { background: #2980b9; }
-  </style>
-</head>
-<body>
-  <h1>Hello, World!</h1>
-  <p>This is a simple demo HTML page.</p>
-  <button onclick="alert('Button clicked!')">Click Me</button>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=500&fit=crop&q=80" class="d-block w-100" alt="Code on screen">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=500&fit=crop&q=80" class="d-block w-100" alt="Laptop with code">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=500&fit=crop&q=80" class="d-block w-100" alt="Developer workspace">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+</div>
+
+<div class="container mt-5">
+    <h1 class="text-center mx-5px">Welcome to Django World!</h1>
+    <p class="text-center mx-5px">This is a simple Django application.</p>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Code editor" style="height:225px; object-fit:cover;">
+
+            <div class="card-body">
+              <p class="card-text">A clean, distraction-free code editor setup that helps developers focus and write better code faster.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Team coding" style="height:225px; object-fit:cover;">
+
+            <div class="card-body">
+              <p class="card-text">Collaborative development in action, where teams work together to solve problems and ship quality software.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Server room" style="height:225px; object-fit:cover;">
+
+            <div class="card-body">
+              <p class="card-text">Reliable server infrastructure powering applications behind the scenes, keeping everything running smoothly.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Analytics dashboard" style="height:225px; object-fit:cover;">
+
+            <div class="card-body">
+              <p class="card-text">Real-time analytics dashboards that turn raw data into clear, actionable insights at a glance.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Laptop and notes" style="height:225px; object-fit:cover;">
+
+            <div class="card-body">
+              <p class="card-text">Planning and note-taking alongside your laptop, turning early ideas into structured project plans.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=225&fit=crop&q=80" class="card-img-top" alt="Workspace setup" style="height:225px; object-fit:cover;">
+
+            <div class="card-body">
+              <p class="card-text">A well-organized workspace setup that boosts productivity and makes long coding sessions comfortable.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock body %}
