@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .bg-slide {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.8s ease-in-out;
+            z-index: 0;
+        }
+        .bg-slide.active {
+            opacity: 1;
+        }
+        .overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+        }
+
+        .center-content {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        .checkmark {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            animation: pop 0.6s ease;
+        }
+        @keyframes pop {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        .center-content h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+        }
+        .center-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .logout-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 3;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            color: #fff;
+            border: 1.5px solid rgba(255,255,255,0.6);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+        .logout-btn:hover {
+            background: #fff;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-slide active" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop&q=80');"></div>
+    <div class="bg-slide" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&h=1080&fit=crop&q=80');"></div>
+    <div class="bg-slide" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&h=1080&fit=crop&q=80');"></div>
+    <div class="overlay"></div>
+
+    <div class="center-content">
+        <div class="checkmark">✓</div>
+        <h1>Logged in successfully!</h1>
+        <p>Welcome back{% if user.username %}, {{ user.username }}{% endif %}.</p>
+    </div>
+
+    <a href="/logout" class="logout-btn">Logout</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.bg-slide');
+            let current = 0;
+            setInterval(function () {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 4000);
+        });
+    </script>
+
+</body>
+</html>
